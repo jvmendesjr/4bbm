@@ -27,6 +27,98 @@
         .system-blue { background: #1e40af; }
         .system-green { background: #059669; }
         .system-red { background: #dc2626; }
+
+        /* Melhorias de responsividade */
+        @media (max-width: 768px) {
+            .mobile-header-stack {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .mobile-logos {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+            }
+            
+            .mobile-logos img {
+                width: 3rem;
+                height: 3rem;
+            }
+            
+            .mobile-title {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+            
+            .mobile-subtitle {
+                font-size: 0.875rem;
+            }
+            
+            .mobile-unit-info {
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+            
+            .mobile-objective {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .mobile-objective-icon {
+                width: 3rem;
+                height: 3rem;
+                align-self: center;
+            }
+            
+            .mobile-task-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .mobile-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .mobile-card-padding {
+                padding: 1rem;
+            }
+            
+            .mobile-task-padding {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mobile-small-title {
+                font-size: 1.25rem;
+            }
+            
+            .mobile-small-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .mobile-small-objective-title {
+                font-size: 1.25rem;
+            }
+            
+            .mobile-small-objective-text {
+                font-size: 0.875rem;
+            }
+            
+            .mobile-small-padding {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -58,26 +150,24 @@
     <div class="min-h-screen">
         <!-- Header with Logos -->
         <header class="card-presentation border-b border-gray-200 dark:border-gray-700 theme-transition">
-            <div class="px-8 py-6">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-6">
+            <div class="px-4 md:px-8 py-4 md:py-6 mobile-padding mobile-small-padding">
+                <div class="flex items-center justify-between mobile-header-stack">
+                    <div class="flex items-center gap-4 md:gap-6 mobile-logos">
                         <!-- Logos lado a lado -->
-                        <img src="logocratus4BBM.png" alt="Logo Ceará" class="w-16 h-16 rounded-full shadow-lg">
-                        <img src="logoiguatu4BBM.png" alt="Logo CBMCE" class="w-16 h-16 rounded-full shadow-lg">
-                        <img src="taua.png" alt="Logo 4º BBM" class="w-16 h-16 rounded-full shadow-lg">
+                        <img src="logocratus4BBM.png" alt="Logo Ceará" class="w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg">
+                        <img src="logoiguatu4BBM.png" alt="Logo CBMCE" class="w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg">
+                        <img src="taua.png" alt="Logo 4º BBM" class="w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg">
                         
-                        <div class="ml-4">
-                            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Diretrizes Essenciais de Reuniões</h1>
-                            <p class="text-lg text-gray-600 dark:text-gray-400">Plano de Ação Operacional | 4º BBM</p>
+                        <div class="ml-2 md:ml-4">
+                            <h1 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mobile-title mobile-small-title">Diretrizes Essenciais de Reuniões</h1>
+                            <p class="text-sm md:text-lg text-gray-600 dark:text-gray-400 mobile-subtitle mobile-small-subtitle">Plano de Ação Operacional | 4º BBM</p>
                         </div>
                     </div>
                     
                     <div class="flex items-center gap-4">
-
-                        
                         <!-- Unit Info -->
-                        <div class="text-right">
-                            <p class="text-sm font-medium text-gray-900 dark:text-white">4º BATALHÃO DE BOMBEIROS MILITAR</p>
+                        <div class="text-right mobile-unit-info">
+                            <p class="text-xs md:text-sm font-medium text-gray-900 dark:text-white">4º BATALHÃO DE BOMBEIROS MILITAR</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400">📅 27/06/2025, 10:00</p>
                         </div>
                     </div>
@@ -86,16 +176,16 @@
         </header>
 
         <!-- Main Content -->
-        <main class="px-8 py-6">
+        <main class="px-4 md:px-8 py-4 md:py-6 mobile-padding mobile-small-padding">
             <!-- Objective Banner -->
-            <div class="card-presentation rounded-2xl p-8 mb-8 shadow-lg">
-                <div class="flex items-center gap-6">
-                    <div class="w-16 h-16 system-blue rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                        <span class="text-3xl text-white">🎯</span>
+            <div class="card-presentation rounded-xl md:rounded-2xl p-4 md:p-8 mb-6 md:mb-8 shadow-lg mobile-card-padding">
+                <div class="flex items-center gap-4 md:gap-6 mobile-objective">
+                    <div class="w-12 h-12 md:w-16 md:h-16 system-blue rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg mobile-objective-icon">
+                        <span class="text-2xl md:text-3xl text-white">🎯</span>
                     </div>
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">OBJETIVO PRINCIPAL</h2>
-                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3 mobile-small-objective-title">OBJETIVO PRINCIPAL</h2>
+                        <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mobile-small-objective-text">
                             Essas ações são essenciais para aprimorar a operação, a disciplina e o ambiente no quartel, 
                             elevando a qualidade do serviço prestado à sociedade pelo 4º BBM.
                         </p>
@@ -104,154 +194,154 @@
             </div>
 
             <!-- Tasks Compact Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8 mobile-task-grid">
                 <!-- Task 1 -->
-                <div class="task-compact rounded-xl p-5 priority-high shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-high shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-red text-white rounded-lg flex items-center justify-center font-bold text-sm">01</div>
                         <span class="text-xl">📢</span>
                         <span class="px-2 py-1 text-xs font-bold bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full">PRIORITÁRIA</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Preleções Diárias Obrigatórias</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Preleções Diárias Obrigatórias</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Participação com pelo menos um oficial presente para reforçar disciplina e comunicação.</p>
                 </div>
 
                 <!-- Task 2 -->
-                <div class="task-compact rounded-xl p-5 priority-high shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-high shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-red text-white rounded-lg flex items-center justify-center font-bold text-sm">02</div>
                         <span class="text-xl">⏰</span>
                         <span class="px-2 py-1 text-xs font-bold bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full">PRIORITÁRIA</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Fiscalização Rigorosa de Horários</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Fiscalização Rigorosa de Horários</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Cumprimento rigoroso de horários e atendimento rápido às ocorrências.</p>
                 </div>
 
                 <!-- Task 3 -->
-                <div class="task-compact rounded-xl p-5 priority-high shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-high shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-red text-white rounded-lg flex items-center justify-center font-bold text-sm">03</div>
                         <span class="text-xl">🛡️</span>
                         <span class="px-2 py-1 text-xs font-bold bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full">PRIORITÁRIA</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Responsabilidade dos Fiscais</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Responsabilidade dos Fiscais</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Controle de material, equipamentos e supervisão das guarnições.</p>
                 </div>
 
                 <!-- Task 4 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">04</div>
                         <span class="text-xl">🧹</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Manutenção do Quartel</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Manutenção do Quartel</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Limpeza, organização e manutenção adequada dos alojamentos.</p>
                 </div>
 
                 <!-- Task 5 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">05</div>
                         <span class="text-xl">📊</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Sistema COD Atualizado</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Sistema COD Atualizado</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Preenchimento correto e documentação adequada das ocorrências.</p>
                 </div>
 
                 <!-- Task 6 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">06</div>
                         <span class="text-xl">💻</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Ferramentas Tecnológicas</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Ferramentas Tecnológicas</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Uso de sistemas digitais para melhorar gestão e comunicação operacional.</p>
                 </div>
 
                 <!-- Task 7 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">07</div>
                         <span class="text-xl">🚗</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Conservação de Viaturas</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Conservação de Viaturas</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Acompanhamento diário e prevenção de danos nas viaturas operacionais.</p>
                 </div>
 
                 <!-- Task 8 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">08</div>
                         <span class="text-xl">📋</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicação com Administração</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicação com Administração</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Repasse constante de demandas administrativas e operacionais.</p>
                 </div>
 
                 <!-- Task 9 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">09</div>
                         <span class="text-xl">📞</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicação com Comando</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Comunicação com Comando</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Comunicação ativa sobre dúvidas e problemas operacionais.</p>
                 </div>
 
                 <!-- Task 10 -->
-                <div class="task-compact rounded-xl p-5 priority-normal shadow-lg">
+                <div class="task-compact rounded-xl p-4 md:p-5 priority-normal shadow-lg mobile-task-padding">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 system-green text-white rounded-lg flex items-center justify-center font-bold text-sm">10</div>
                         <span class="text-xl">👨‍💼</span>
                         <span class="px-2 py-1 text-xs font-bold bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">NORMAL</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Reuniões de Alinhamento</h3>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">Reuniões de Alinhamento</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Preparação e participação em reuniões de alinhamento operacional.</p>
                 </div>
             </div>
 
             <!-- Statistics Summary -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="card-presentation rounded-xl p-6 text-center shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8 mobile-stats-grid">
+                <div class="card-presentation rounded-xl p-4 md:p-6 text-center shadow-lg">
                     <div class="w-12 h-12 system-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-xl">3</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">Tarefas Prioritárias</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Requerem atenção imediata</p>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white">Tarefas Prioritárias</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Requerem atenção imediata</p>
                 </div>
                 
-                <div class="card-presentation rounded-xl p-6 text-center shadow-lg">
+                <div class="card-presentation rounded-xl p-4 md:p-6 text-center shadow-lg">
                     <div class="w-12 h-12 system-green rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-xl">7</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">Tarefas Normais</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Execução programada</p>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white">Tarefas Normais</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Execução programada</p>
                 </div>
                 
-                <div class="card-presentation rounded-xl p-6 text-center shadow-lg">
+                <div class="card-presentation rounded-xl p-4 md:p-6 text-center shadow-lg">
                     <div class="w-12 h-12 system-blue rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-xl">10</span>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">Total de Ações</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Plano operacional completo</p>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white">Total de Ações</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Plano operacional completo</p>
                 </div>
             </div>
 
             <!-- Footer Info -->
-            <div class="card-presentation rounded-xl p-6 shadow-lg text-center">
+            <div class="card-presentation rounded-xl p-4 md:p-6 shadow-lg text-center">
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <div class="w-12 h-12 system-blue rounded-xl flex items-center justify-center">
                         <span class="text-white text-xl">🏢</span>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">4º Batalhão de Bombeiros Militar</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Plano de Ação Operacional - Reunião de Alinhamento</p>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white">4º Batalhão de Bombeiros Militar</h3>
+                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Plano de Ação Operacional - Reunião de Alinhamento</p>
                     </div>
                 </div>
             </div>
@@ -259,4 +349,3 @@
     </div>
 </body>
 </html>
-
